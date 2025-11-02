@@ -20,6 +20,7 @@ def main():
             if event.type == pygame.QUIT:
                 pygame.quit()
                 return
+        player.update(dt)
         player.draw(screen)
         pygame.display.flip()
         dt = clock.tick(60) / 1000  # Convert milliseconds to seconds
