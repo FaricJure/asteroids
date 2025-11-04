@@ -33,6 +33,11 @@ def main():
                 pygame.quit()
                 return
         updatable.update(dt)
+        for asteroid in asteroids:
+            if player.collision(asteroid):
+                print("Game over!")
+                pygame.quit()
+                return
         for sprite in drawable:
             sprite.draw(screen)
         pygame.display.flip()
